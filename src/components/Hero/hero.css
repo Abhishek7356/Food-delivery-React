@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Montserrat:wght@500&family=Quicksand:wght@300&family=Raleway:wght@300&display=swap');
+
+
+.headImg{
+    height: 450px;
+    overflow: hidden;
+    background-image: url('https://images4.alphacoders.com/107/1078985.jpg');
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.headText{
+    max-width: 450px;
+    color: aliceblue;
+    text-shadow: 3px 3px 10px black;
+}
+.headText p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .headImg{
+        height: 234px;
+        background-size: cover;
+        display: flex;
+        padding-right: 100px;
+    }
+    .headText{
+        width: 100%;
+        transform: translate(100px,0);
+        background-color: rgba(0, 0, 0, 0.234);
+        border-radius: 10px;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    .headText p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+  }

@@ -1,0 +1,33 @@
+.container {
+    display: block;
+    margin: auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.itemContainer {
+    width: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.itemContainer img {
+    width: 100%;
+}
+
+.itemContainer h3 {
+    text-align: center;
+    margin: 6px 15px;
+    font-size: 18px;
+}
+.loading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
