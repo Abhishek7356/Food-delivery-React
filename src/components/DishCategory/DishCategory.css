@@ -103,29 +103,12 @@
     transition: .4s;
   }
 .itemContainer img:hover{
-    filter: brightness(80%);
+    filter: brightness(75%);
   }
 
 @media only screen and (max-width: 600px) {
     .outerContainer {
         margin-top: 10px;
-    }
-    .dishesContainer {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .itemContainer {
-        width: 110px !important;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .itemContainer img{
-        height: 110px;
-        width: 110px;
-        border-radius: 10px;
-        overflow: hidden;
     }
     .categoryHead {
         width: 100%;

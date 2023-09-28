@@ -1,0 +1,124 @@
+.popupCintainer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000b2;
+    transition: .3s;
+    overflow-y: scroll;
+    z-index: 99;
+}
+
+.popupBox {
+    width: 50%;
+    /* height: 80%; */
+    position: relative;
+    background-color: rgb(248, 246, 246);
+    border-radius: 10px;
+    padding: 20px 20px 0px;
+    /* display: flex;
+    flex-direction: column; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.orderNow {
+    padding: 7px 15px;
+    border-radius: 7px;
+    outline: 0;
+    border: 3px solid #3f51b5;
+    /* background-color: #3f51b5 !important; */
+    color: #3f51b5;
+    font-weight: 500;
+    border: 2px solid #3f51b5;
+    background: transparent;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    transition: .3s;
+}
+
+.closeBtn {
+    /* border: 3px solid black !important; */
+    border-radius: 10px !important;
+    padding: 8px !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.closeBtn:hover {
+    background-color: rgb(192, 196, 196) !important;
+}
+
+.popUpImg {
+    width: 40%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dishMainDetails {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.dishTextDetails {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 50%;
+    padding: 20px;
+}
+
+.dishTextDetails p {
+    margin: 3px;
+}
+
+.ingredients {
+    border: 1px solid gray;
+    padding: 7px 30px;
+    border-radius: 7px;
+    margin: 4px 0;
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+.preparation {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .popupBox {
+        width: 100%;
+    }
+
+    .popUpImg {
+        width: 100%;
+        height: 200px;
+    }
+
+    .dishMainDetails {
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .dishTextDetails {
+        flex-direction: column;
+        width: 100%;
+    }
+
+}

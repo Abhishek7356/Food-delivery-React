@@ -45,29 +45,6 @@ body {
 
 
 @media only screen and (max-width: 600px) {
-    .dishesContainer {
-        display: flex;
-        justify-content: flex-start;
-        gap: 10px;
-    }
-
-    .itemContainer {
-        width: 110px !important;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    .itemContainer img{
-        height: 110px;
-        width: 110px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .itemContainer h3 {
-        margin: 6px 15px;
-        font-size: 10px !important;
-    }
-
     .specialText {
         width: 100%;
         font-size: 16px;
@@ -75,5 +52,9 @@ body {
 
     .specialDishes {
         margin-top: 40px;
+    }
+    .specialDishes{
+        padding: 0;
+        margin: 0;
     }
 }

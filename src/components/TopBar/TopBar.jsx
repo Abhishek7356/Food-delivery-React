@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TopBar.css'
 import {
     MDBContainer,
     MDBNavbar,
@@ -17,7 +18,7 @@ function TopBar() {
     const [showBasic, setShowBasic] = useState(false);
 
     return (
-        <div style={{fontFamily:'Abel',letterSpacing:'1px'}}>
+        <div className='navbarSection' style={{letterSpacing:'1px'}}>
             <MDBNavbar expand='lg' light bgColor='light'>
                 <MDBContainer className='container' fluid>
                     <MDBNavbarBrand href='#' className='fw-bold text-primary'>Foodie</MDBNavbarBrand>

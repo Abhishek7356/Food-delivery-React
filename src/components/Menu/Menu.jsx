@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import './menu.css'
 import { useEffect } from 'react';
 import Hero from '../Hero/Hero';
-import TopBar from '../TopBar';
+import TopBar from '../TopBar/TopBar';
 import SpecialDish from '../SpecialDish/SpecialDish';
 import DishCategory from '../DishCategory/DishCategory';
 import { MDBSpinner } from 'mdb-react-ui-kit';
+import Loader from '../Loader/Loader';
 
 
 function Menu() {
@@ -63,11 +64,7 @@ function Menu() {
                     <SpecialDish menu={menu} />
                     <DishCategory category={category} beefItems={beefItems} />
                 </div> :
-                <div className='loading'>
-                    <MDBSpinner role='status' className='me-2' color='warning'>
-                        <span className='visually-hidden'>Loading...</span>
-                    </MDBSpinner>Loading...
-                </div>
+                <Loader/>
             }
         </div>
     )
