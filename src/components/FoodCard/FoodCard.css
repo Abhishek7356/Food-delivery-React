@@ -1,7 +1,13 @@
 
-.itemContainer{
-    width: 100% !important;
-}
-.itemContainer img{
-    width: 100%;
+
+
+@media only screen and (max-width: 600px) {
+
+    .itemContainer {
+        width: 100% !important;
+    }
+
+    .itemContainer img {
+        width: 100%;
+    }
 }
