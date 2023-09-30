@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Montserrat:wght@500&family=Quicksand:wght@300&family=Raleway:wght@300&display=swap');
+
 .popupCintainer {
     position: fixed;
     top: 0;
@@ -11,6 +14,7 @@
     transition: .3s;
     overflow-y: scroll;
     z-index: 99;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .popupBox {
@@ -27,18 +31,18 @@
     align-items: center; */
 }
 
-.buttonDiv {
+/* .buttonDiv {
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 .orderNow {
     padding: 7px 15px;
     border-radius: 7px;
     outline: 0;
     border: 3px solid #3f51b5;
-    /* background-color: #3f51b5 !important; */
-    color: #3f51b5;
+    background-color: #3f51b5 !important;
+    color: #fff;
     font-weight: 500;
     border: 2px solid #3f51b5;
     background: transparent;
@@ -85,17 +89,22 @@
 }
 
 .ingredients {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     padding: 7px 30px;
     border-radius: 7px;
     margin: 4px 0;
-    background-color: #3f51b5;
-    color: #fff;
+    /* background-color: #3f51b5; */
+    /* color: #fff; */
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
 }
 
 .preparation {
     height: 250px;
     overflow-y: scroll;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    letter-spacing: .5px;
 }
 
 

@@ -3,6 +3,12 @@ import './Popup.css'
 
 function Popup(props) {
 
+    const addToCartHandler = () => {
+        props.setAddToCartItem(props.currentDish);
+        props.setPopup(false)
+        // console.log(props.addToCartItem);
+    }
+
     const popUpCloseHandler = () => {
         props.setPopup(false)
     }
@@ -13,16 +19,16 @@ function Popup(props) {
                 <div className="dishMainDetails">
                     <img className='popUpImg' src={props.currentDish.strMealThumb} alt="" />
                     <div className="dishTextDetails">
-                        <h3>{props.currentDish.strMeal}</h3>
+                        <h4>{props.currentDish.strMeal}</h4>
                         <div className='ingredients'>
-                            <h6>Ingredients :</h6>
+                            <h5>Ingredients :</h5>
                             <p>{props.currentDish.strIngredient1}</p>
                             <p>{props.currentDish.strIngredient2}</p>
                             <p>{props.currentDish.strIngredient3}</p>
                         </div>
-                        <div className='buttonDiv'>
-                            <button className='orderNow'>Order now</button>
-                        </div>
+                        {/* <div className='buttonDiv'> */}
+                        <button onClick={addToCartHandler} className='orderNow'>Add to cart <i class="fa-solid fa-cart-plus"></i></button>
+                        {/* </div> */}
                     </div>
                 </div>
                 <p className='preparation'>{props.currentDish.strInstructions}</p>

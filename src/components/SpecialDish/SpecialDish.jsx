@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './specialDish.css'
 import FoodCard from '../FoodCard/FoodCard';
 import Popup from '../Popup/Popup';
 import Loader from '../Loader/Loader';
+import { AllMenuList } from '../AllMenuUseContext';
+
 
 function SpecialDish(props) {
+
+    const menuList = useContext(AllMenuList);
 
     const [popUp, setPopup] = useState(false);
     const [currentDish, setCurrentDish] = useState({});
     const [loading, setLoading] = useState(false)
+    const [addToCartItem, setAddToCartItem] = useState([])
 
-    // console.log(currentDish);
+    // console.log(addToCartItem);
 
     let maxSpecialDishes = 8;
 
-    let specialDishes = props.menu.map((item, index) => {
+    let specialDishes = menuList.map((item, index) => {
         if (index < maxSpecialDishes) {
             return (
                 <FoodCard setLoading={setLoading} setCurrentDish={setCurrentDish} item={item} setPopup={setPopup} />
@@ -25,7 +30,7 @@ function SpecialDish(props) {
     return (
         <div className='container specialDishes'>
             {
-                !loading ? popUp && <Popup currentDish={currentDish} setPopup={setPopup} /> : <Loader />
+                !loading ? popUp && <Popup setAddToCartItem={setAddToCartItem} currentDish={currentDish} setPopup={setPopup} /> : <Loader />
 
             }
             <div className="specialText">

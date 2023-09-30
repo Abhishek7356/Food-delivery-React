@@ -1,0 +1,51 @@
+
+
+.cartIconContainer{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 90%;
+    transition: .3s;
+    overflow-y: scroll;
+    z-index: 98;
+    font-family: 'Montserrat', sans-serif;
+}
+.cartIcon{
+    color: white;
+    font-size: 30px;
+    border: 3px solid #14a44d;
+    background-color: #14a44d;
+    width: 60px;
+    height: 60px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cartIcon:hover{
+    background-color: white;
+    color: #14a44d;
+}
+
+.cartIcon p{
+    position: absolute;
+    font-size: 14px;
+    transform: translate(-20px,30px);
+    background-color: #14a44d;
+    color: white;
+    border: 2px solid white;
+    width: 28px;
+    height: 28px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+}

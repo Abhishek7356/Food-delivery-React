@@ -5,6 +5,7 @@
 
     .itemContainer {
         width: 100% !important;
+        font-family: 'Montserrat', sans-serif;
     }
 
     .itemContainer img {

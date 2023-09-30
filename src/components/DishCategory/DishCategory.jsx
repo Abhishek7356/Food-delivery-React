@@ -17,7 +17,9 @@ function DishCategory(props) {
     const [itemPerPage, setItemPerPage] = useState(4)
     const [popUp, setPopup] = useState(false);
     const [currentDish, setCurrentDish] = useState({});
+    const [addToCartItem, setAddToCartItem] = useState([])
 
+    console.log(addToCartItem);
 
     let pageLastIndex = currentPage * itemPerPage;
     let pageFirstIndex = pageLastIndex - itemPerPage;
@@ -71,13 +73,13 @@ function DishCategory(props) {
 
     let categoryDishes = props.category.map((item) => {
         return (
-            <p id={active == item.strCategory ? 'active' : ''} onClick={() => handleCategory(item.strCategory,item.idMeal)} className='categoryItem shadow'>{item.strCategory}</p>
+            <p id={active == item.strCategory ? 'active' : ''} onClick={() => handleCategory(item.strCategory, item.idMeal)} className='categoryItem'>{item.strCategory}</p>
         )
     })
 
     return (
         <div>
-            {popUp && <Popup currentDish={currentDish} setPopup={setPopup} />}
+            {popUp && <Popup setAddToCartItem={setAddToCartItem} currentDish={currentDish} setPopup={setPopup} />}
             <div className="outerContainer container">
                 <div className="categoryHead">
                     <h2>Choose your category</h2>
@@ -96,7 +98,7 @@ function DishCategory(props) {
                                         <h6>Please, Try another category</h6>
                                     </div>
                                 </div>
-                            : <Loader/>
+                            : <Loader />
                     }
                 </div>
             </div>
