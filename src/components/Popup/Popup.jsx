@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Popup.css'
 
 function Popup(props) {
 
+
     const addToCartHandler = () => {
-        props.setAddToCartItem(props.currentDish);
+        props.setAddToCartItem([...props.addToCartItem, props.currentDish]);
         props.setPopup(false)
         // console.log(props.addToCartItem);
     }

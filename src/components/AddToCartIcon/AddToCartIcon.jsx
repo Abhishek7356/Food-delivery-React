@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AddToCartIcon.css'
+import AddToCartMenu from '../AddToCartMenu/AddToCartMenu';
 
 function AddToCartIcon(props) {
-    // let cartItemLEngth = props.addToCartItem.length;
 
-    // const cartBoxHandler = () => {
-    //     props.setCartMenuShow(true)
-    //     props.setToShowCartCard(props.addToCartItem)
-    // }
+  const [cartMenuShow, setCartMenuShow] = useState(false)
+
+  let cartItemLEngth = props.addToCartItem.length;
+
+  const cartBoxHandler = () => {
+    setCartMenuShow(true)
+  }
 
   return (
     <div className='cartIconContainer'>
-        <i  class="cartIcon fa-solid fa-cart-plus fa-bounce shadow"><p className='shadow'>1</p></i>
-        
+      <i onClick={cartBoxHandler} class="cartIcon fa-solid fa-cart-plus fa-bounce shadow">
+        {cartItemLEngth != 0 && <p className='shadow'>{cartItemLEngth}</p>}
+      </i>
+      {cartMenuShow && <AddToCartMenu cartItems={props.addToCartItem} setCartMenuShow={setCartMenuShow} />}
     </div>
   )
 }

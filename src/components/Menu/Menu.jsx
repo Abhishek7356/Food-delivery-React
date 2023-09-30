@@ -4,10 +4,8 @@ import { useEffect } from 'react';
 import Hero from '../Hero/Hero';
 import TopBar from '../TopBar/TopBar';
 import SpecialDish from '../SpecialDish/SpecialDish';
-import DishCategory from '../DishCategory/DishCategory';
 import Loader from '../Loader/Loader';
 import AllMenuUseContext, { AllMenuList } from '../AllMenuUseContext';
-import AddToCartIcon from '../AddToCartIcon/AddToCartIcon';
 
 
 function Menu() {
@@ -59,12 +57,10 @@ function Menu() {
         <div>
             <TopBar />
             <Hero />
-            <AddToCartIcon />
             <AllMenuUseContext>
                 {!loading ?
                     <div>
-                        <SpecialDish cartMenuShow={cartMenuShow} setCartMenuShow={setCartMenuShow}/>
-                        <DishCategory category={category} beefItems={beefItems} />
+                        <SpecialDish category={category} beefItems={beefItems} cartMenuShow={cartMenuShow} setCartMenuShow={setCartMenuShow}/>
                     </div> :
                     <Loader />
                 }
