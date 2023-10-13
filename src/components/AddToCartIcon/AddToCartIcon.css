@@ -12,9 +12,9 @@
     font-family: 'Montserrat', sans-serif;
 }
 .cartIcon{
-    color: #14a44d;
+    color: #dc4c64;
     font-size: 30px;
-    border: 3px solid #14a44d;
+    border: 3px solid #dc4c64;
     background-color: #fff;
     width: 60px;
     height: 60px;
@@ -30,7 +30,7 @@
 }
 
 .cartIcon:hover{
-    background-color: #14a44d;
+    background-color: #dc4c64;
     color: #fff;
 }
 
@@ -38,7 +38,7 @@
     position: absolute;
     font-size: 14px;
     transform: translate(-20px,30px);
-    background-color: #14a44d;
+    background-color: #dc4c64;
     color: white;
     border: 2px solid white;
     width: 28px;

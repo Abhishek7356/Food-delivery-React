@@ -6,6 +6,7 @@ import TopBar from '../TopBar/TopBar';
 import SpecialDish from '../SpecialDish/SpecialDish';
 import Loader from '../Loader/Loader';
 import AllMenuUseContext, { AllMenuList } from '../AllMenuUseContext';
+import AppContext from '../../context/AppContext';
 
 
 function Menu() {
@@ -55,16 +56,18 @@ function Menu() {
 
     return (
         <div>
-            <TopBar />
-            <Hero />
-            <AllMenuUseContext>
-                {!loading ?
-                    <div>
-                        <SpecialDish category={category} beefItems={beefItems} cartMenuShow={cartMenuShow} setCartMenuShow={setCartMenuShow}/>
-                    </div> :
-                    <Loader />
-                }
-            </AllMenuUseContext>
+            <AppContext>
+                <TopBar />
+                <Hero />
+                <AllMenuUseContext>
+                    {!loading ?
+                        <div>
+                            <SpecialDish category={category} beefItems={beefItems} cartMenuShow={cartMenuShow} setCartMenuShow={setCartMenuShow} />
+                        </div> :
+                        <Loader />
+                    }
+                </AllMenuUseContext>
+            </AppContext>
         </div>
     )
 }

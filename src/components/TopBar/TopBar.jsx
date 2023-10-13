@@ -12,13 +12,14 @@ import {
     MDBBtn,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
+import { Link } from 'react-router-dom';
 
 function TopBar() {
 
     const [showBasic, setShowBasic] = useState(false);
 
     return (
-        <div className='navbarSection' style={{letterSpacing:'1px'}}>
+        <div className='navbarSection' style={{ letterSpacing: '1px' }}>
             <MDBNavbar expand='lg' light bgColor='light'>
                 <MDBContainer className='container' fluid>
                     <MDBNavbarBrand href='#' className='fw-bold text-primary'>Foodie</MDBNavbarBrand>
@@ -35,12 +36,9 @@ function TopBar() {
                     <MDBCollapse navbar show={showBasic}>
                         <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
                             <MDBNavbarItem>
-                                <MDBNavbarLink active aria-current='page' href='#'>
+                                <Link to={'/'}><MDBNavbarLink active aria-current='page' href=''>
                                     Home
-                                </MDBNavbarLink>
-                            </MDBNavbarItem>
-                            <MDBNavbarItem>
-                                <MDBNavbarLink href='#'>Link</MDBNavbarLink>
+                                </MDBNavbarLink></Link>
                             </MDBNavbarItem>
                         </MDBNavbarNav>
 

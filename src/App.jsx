@@ -1,5 +1,6 @@
 import './App.css';
 import Menu from './components/Menu/Menu';
+import Popup from './components/Popup/Popup';
 
 function App() {
   return (

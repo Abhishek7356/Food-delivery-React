@@ -29,7 +29,7 @@ function AddToCartMenu(props) {
             <div className="innerCartContainer">
                 <button onClick={popUpCloseHandler} className='btn-close closeBtn'></button>
                 <div className='mb-4'>
-                    <h3 className='text-center'>Cart items</h3>
+                    <h3 className='text-center'>Favourite items<i class=" fa-solid fa-heart text-danger ms-3"></i></h3>
                     <hr />
                 </div>
                 {cartItems}

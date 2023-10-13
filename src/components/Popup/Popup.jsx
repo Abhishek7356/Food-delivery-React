@@ -28,10 +28,11 @@ function Popup(props) {
                             <p>{props.currentDish.strIngredient3}</p>
                         </div>
                         {/* <div className='buttonDiv'> */}
-                        <button onClick={addToCartHandler} className='orderNow'>Add to cart <i class="fa-solid fa-cart-plus"></i></button>
+                        <button onClick={addToCartHandler} className='orderNow'>Add to favourite <i class="fa-solid fa-heart"></i></button>
                         {/* </div> */}
                     </div>
                 </div>
+                <h4>Preparation :</h4>
                 <p className='preparation'>{props.currentDish.strInstructions}</p>
             </div>
         </div>
