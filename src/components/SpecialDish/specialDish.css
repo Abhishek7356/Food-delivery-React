@@ -191,6 +191,7 @@ body {
 
     .dishCategory {
         width: 100%;
+        display: flex;
         gap: 10px;
     }
 
@@ -202,5 +203,12 @@ body {
     #active {
         padding: 5px 15px;
         font-weight: 400;
+    }
+    .dishesContainer {
+        display: flex;
+        justify-content: flex-start;
+        width: 100% !important;
+        gap: 30px;
+        margin-bottom: 40px;
     }
 }

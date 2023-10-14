@@ -3,26 +3,22 @@ import './specialDish.css'
 import FoodCard from '../FoodCard/FoodCard';
 import Popup from '../Popup/Popup';
 import Loader from '../Loader/Loader';
-import { AllMenuList } from '../AllMenuUseContext';
 import Pagination from '../Pagination/Pagination';
 import AddToCartIcon from '../AddToCartIcon/AddToCartIcon';
+import { StateContext } from '../../context/AppContext';
 
 
-function SpecialDish(props) {
-
-    const menuList = useContext(AllMenuList);
+function SpecialDish() {
 
     const [popUp, setPopup] = useState(false);
-    const [currentDish, setCurrentDish] = useState({});
     const [loading, setLoading] = useState(false)
-    const [addToCartItem, setAddToCartItem] = useState([ ])
     const [categoryItem, setCategoryItem] = useState([])
     const [active, setActive] = useState('Beef')
     const [defaultItem, setDefaultItem] = useState(true)
     const [currentPage, setCurrentPage] = useState(1)
     const [itemPerPage, setItemPerPage] = useState(4)
 
-    console.log(addToCartItem);
+    const states = useContext(StateContext)
 
     let pageLastIndex = currentPage * itemPerPage;
     let pageFirstIndex = pageLastIndex - itemPerPage;
@@ -40,16 +36,16 @@ function SpecialDish(props) {
         setLoading(false)
         let listcategoryItems = data.meals.map((item) => {
             return (
-                <FoodCard item={item} setLoading={setLoading} setCurrentDish={setCurrentDish} setPopup={setPopup} />
+                <FoodCard item={item} setLoading={setLoading} setPopup={setPopup} />
             )
         })
         setCategoryItem(listcategoryItems)
         // console.log(categoryItem);
     }
 
-    let beefDetails = props.beefItems.map((item) => {
+    let beefDetails = states.beefItems.map((item) => {
         return (
-            <FoodCard item={item} setCurrentDish={setCurrentDish} setLoading={setLoading} setPopup={setPopup} />
+            <FoodCard item={item} setLoading={setLoading} setPopup={setPopup} />
         )
     })
 
@@ -60,30 +56,27 @@ function SpecialDish(props) {
     }, [])
 
 
-    let categoryDishes = props.category.map((item) => {
+    let categoryDishes = states.categories.map((item) => {
         return (
             <p id={active == item.strCategory ? 'active' : ''} onClick={() => handleCategory(item.strCategory, item.idMeal)} className='categoryItem'>{item.strCategory}</p>
         )
     })
 
-    // props.setCartMenuShow([addToCartItem])
-    // console.log(addToCartItem);
-
     let maxSpecialDishes = 8;
 
-    let specialDishes = menuList.map((item, index) => {
+    let specialDishes = states.allData.map((item, index) => {
         if (index < maxSpecialDishes) {
             return (
-                <FoodCard setLoading={setLoading} setCurrentDish={setCurrentDish} item={item} setPopup={setPopup} />
+                <FoodCard setLoading={setLoading} item={item} setPopup={setPopup} />
             )
         }
     })
 
     return (
         <div className='container specialDishes'>
-            <AddToCartIcon addToCartItem={addToCartItem} />
+            <AddToCartIcon />
             {
-                !loading ? popUp && <Popup addToCartItem={addToCartItem} setAddToCartItem={setAddToCartItem} currentDish={currentDish} setPopup={setPopup} /> : <Loader />
+                !loading ? popUp && <Popup setPopup={setPopup} /> : <Loader />
             }
             <div className="specialText">
                 <h2>Special dishes</h2>
@@ -92,7 +85,7 @@ function SpecialDish(props) {
             <div className="dishesContainer">
                 {specialDishes}
             </div>
-            {popUp && <Popup addToCartItem={addToCartItem} setAddToCartItem={setAddToCartItem} currentDish={currentDish} setPopup={setPopup} />}
+            {popUp && <Popup setPopup={setPopup} />}
             <div className="outerContainer container">
                 <div className="categoryHead">
                     <h2>Choose your category</h2>

@@ -5,69 +5,54 @@ import Hero from '../Hero/Hero';
 import TopBar from '../TopBar/TopBar';
 import SpecialDish from '../SpecialDish/SpecialDish';
 import Loader from '../Loader/Loader';
-import AllMenuUseContext, { AllMenuList } from '../AllMenuUseContext';
-import AppContext from '../../context/AppContext';
+import AppContext, { DispatchContext } from '../../context/AppContext';
 
 
 function Menu() {
 
-    const [category, setCategory] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [beefItems, setBeefItems] = useState(true);
-    const [cartMenuShow, setCartMenuShow] = useState(false)
-    const [toShowCartCard, setToShowCartCard] = useState([])
-
-    console.log(cartMenuShow);
-
-    const menu = useContext(AllMenuList)
 
     const URL_CATEGORY = 'https://www.themealdb.com/api/json/v1/1/categories.php';
     const BEEF_ITEM = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef';
 
+    const dispatch = useContext(DispatchContext)
 
     const fetchCategoryData = async () => {
         const response = await fetch(URL_CATEGORY);
         const data = await response.json();
-        setCategory(data.categories)
+        dispatch({ type: 'categoryItems', payload: data.categories })
+
     }
     const fetchBeefItems = async () => {
         const response = await fetch(BEEF_ITEM);
         const data = await response.json();
-        // console.log(data.meals);
-        setBeefItems(data.meals)
+        dispatch({ type: 'beefItems', payload: data.meals })
+        setLoading(false)
+    }
+
+    const fetchAllData = async () => {
+        const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=c');
+        const data = await response.json();
+        dispatch({ type: 'allData', payload: data.meals })
         setLoading(false)
     }
 
     useEffect(() => {
+        fetchAllData();
         fetchCategoryData();
         fetchBeefItems();
     }, [])
 
-    // let menuItems = menu.map((item) => {
-    //     return (
-
-    //         <div className='itemContainer'>
-    //             <img src={item.strMealThumb} alt="" />
-    //             <h3>{item.strMeal}</h3>
-    //         </div>
-
-    //     )
-    // })
-
     return (
         <div>
-            <AppContext>
-                <TopBar />
-                <Hero />
-                <AllMenuUseContext>
-                    {!loading ?
-                        <div>
-                            <SpecialDish category={category} beefItems={beefItems} cartMenuShow={cartMenuShow} setCartMenuShow={setCartMenuShow} />
-                        </div> :
-                        <Loader />
-                    }
-                </AllMenuUseContext>
-            </AppContext>
+            <TopBar />
+            <Hero />
+                {!loading ?
+                    <div>
+                        <SpecialDish />
+                    </div> :
+                    <Loader />
+                }
         </div>
     )
 }

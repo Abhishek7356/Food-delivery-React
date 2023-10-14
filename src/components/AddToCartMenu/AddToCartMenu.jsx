@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './AddToCartMenu.css'
-import FoodCard from '../FoodCard/FoodCard';
+import { StateContext } from '../../context/AppContext';
+import Popup from '../Popup/Popup';
 
 function AddToCartMenu(props) {
+
+    const [popup, setpopup] = useState(false)
+
+    const states = useContext(StateContext);
+    const { favItems } = states;
 
     const popUpCloseHandler = () => {
         props.setCartMenuShow(false)
     }
     console.log(props.cartItems);
-    let cartItems = props.cartItems.map((item) => {
+    let cartItems = favItems.map((item) => {
         return (
             <div>
                 <div className='cartItem'>
-                    <img src={item.strMealThumb} alt="" />
+                    <img onClick={() => setpopup(true)} src={item.strMealThumb} alt="" />
                     <div className="cartItemDetails">
                         <h3>{item.strMeal}</h3>
                         <p>{item.strCategory}</p>
@@ -34,6 +40,7 @@ function AddToCartMenu(props) {
                 </div>
                 {cartItems}
             </div>
+            {popup ? <Popup setPopup={setpopup} status={true} /> : ''}
         </div>
     )
 }

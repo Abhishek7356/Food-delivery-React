@@ -4,11 +4,12 @@
 @media only screen and (max-width: 600px) {
 
     .itemContainer {
-        width: 100% !important;
+        width: 100% ;
         font-family: 'Montserrat', sans-serif;
     }
 
     .itemContainer img {
         width: 100%;
     }
+
 }

@@ -1,7 +1,7 @@
 .container {
     display: block;
     margin: auto;
-    width: 75%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -31,3 +31,4 @@
     align-items: center;
     padding-top: 100px;
 }
+
