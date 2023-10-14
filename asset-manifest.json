@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Food-delivery-React/static/css/main.50189b07.css",
-    "main.js": "/Food-delivery-React/static/js/main.98ff03c6.js",
+    "main.css": "/Food-delivery-React/static/css/main.6299b443.css",
+    "main.js": "/Food-delivery-React/static/js/main.596682f3.js",
     "static/media/fa-solid-900.ttf": "/Food-delivery-React/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
     "static/media/fa-brands-400.ttf": "/Food-delivery-React/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
     "static/media/fa-solid-900.woff2": "/Food-delivery-React/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
@@ -11,11 +11,11 @@
     "static/media/fa-v4compatibility.ttf": "/Food-delivery-React/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
     "static/media/fa-v4compatibility.woff2": "/Food-delivery-React/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
     "index.html": "/Food-delivery-React/index.html",
-    "main.50189b07.css.map": "/Food-delivery-React/static/css/main.50189b07.css.map",
-    "main.98ff03c6.js.map": "/Food-delivery-React/static/js/main.98ff03c6.js.map"
+    "main.6299b443.css.map": "/Food-delivery-React/static/css/main.6299b443.css.map",
+    "main.596682f3.js.map": "/Food-delivery-React/static/js/main.596682f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.50189b07.css",
-    "static/js/main.98ff03c6.js"
+    "static/css/main.6299b443.css",
+    "static/js/main.596682f3.js"
   ]
 }
